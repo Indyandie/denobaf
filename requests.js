@@ -28,7 +28,9 @@ fetch("https://example.com")
       if (done) {
         break;
       }
-      log("chunk", value);
+      const decodeValue = new TextDecoder().decode(value)
+      log("chunk", value );
+      log("decode-chunk",  decodeValue);
     }
   })
   .catch((error) => {
